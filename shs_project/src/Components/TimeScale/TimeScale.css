@@ -1,0 +1,78 @@
+/* TimeScale.css */
+
+/* Make the timeline container fixed at the top */
+.timeline-container {
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width across the viewport */
+  height: 100px;
+  background-color: #f4f4f4;
+  z-index: 10; /* Ensure it stays above other elements */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+/* Timeline styling */
+.timeline {
+  position: relative;
+  width: 80%; /* Adjust as needed */
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Draggable indicator */
+.timeline-indicator {
+  position: absolute;
+  top: -5px;
+  width: 20px;
+  height: 20px;
+  background-color: #4caf50;
+  border-radius: 50%;
+  cursor: grab;
+  transition: background-color 0.3s ease;
+}
+
+.timeline-indicator:active {
+  background-color: #3e8e41;
+}
+
+/* Time display below the timeline */
+.time-display {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Add hover effect */
+.timeline-container:hover .timeline-indicator {
+  background-color: #45a049;
+  cursor: grab;
+}
+
+/* When dragging */
+.timeline-container:active .timeline-indicator {
+  background-color: #388e3c;
+}
+
+/* Accessibility: Focus outline for the indicator */
+.timeline-indicator:focus {
+  outline: 3px solid #4caf50;
+}
+
+/* Map container below the timeline */
+.map-container {
+  position: relative;
+  top: 100px; /* Adjust this to match the height of the timeline */
+  width: 100%;
+  height: calc(100vh - 100px); /* Full height minus the timeline */
+  background-color: #e0e0e0; /* Fallback background in case map fails to load */
+}
